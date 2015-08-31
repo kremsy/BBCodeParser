@@ -9,79 +9,79 @@ class BBCodeParser
 
     public $parsers = [
         'bold' => [
-            'pattern' => '/\[b\](.*?)\[\/b\]/s',
+            'pattern' => '/\[b(?:\:[^\]]*?)?\](.*?)\[\/b(?:\:[^\]]*?)?\]/s',
             'replace' => '<strong>$1</strong>',
         ],
         'italic' => [
-            'pattern' => '/\[i\](.*?)\[\/i\]/s',
+            'pattern' => '/\[i(?:\:[^\]]*?)?\](.*?)\[\/i(?:\:[^\]]*?)?\]/s',
             'replace' => '<em>$1</em>',
         ],
         'underline' => [
-            'pattern' => '/\[u\](.*?)\[\/u\]/s',
+            'pattern' => '/\[u(?:\:[^\]]*?)?\](.*?)\[\/u(?:\:[^\]]*?)?\]/s',
             'replace' => '<u>$1</u>',
         ],
         'linethrough' => [
-            'pattern' => '/\[s\](.*?)\[\/s\]/s',
+            'pattern' => '/\[s(?:\:[^\]]*?)?\](.*?)\[\/s(?:\:[^\]]*?)?\]/s',
             'replace' => '<strike>$1</strike>',
         ],
         'size' => [
-            'pattern' => '/\[size\=([1-7])\](.*?)\[\/size\]/s',
+            'pattern' => '/\[size\=([1-7])(?:\:[^\]]*?)?\](.*?)\[\/size(?:\:[^\]]*?)?\]/s',
             'replace' => '<font size="$1">$2</font>',
         ],
         'color' => [
-            'pattern' => '/\[color\=(#[A-f0-9]{6}|#[A-f0-9]{3})\](.*?)\[\/color\]/s',
+            'pattern' => '/\[color\=(#[A-f0-9]{6}|#[A-f0-9]{3})(?:\:[^\]]*?)?\](.*?)\[\/color(?:\:[^\]]*?)?\]/s',
             'replace' => '<font color="$1">$2</font>',
         ],
         'center' => [
-            'pattern' => '/\[center\](.*?)\[\/center\]/s',
+            'pattern' => '/\[center(?:\:[^\]]*?)?\](.*?)\[\/center(?:\:[^\]]*?)?\]/s',
             'replace' => '<div style="text-align:center;">$1</div>',
         ],
         'quote' => [
-            'pattern' => '/\[quote\](.*?)\[\/quote\]/s',
+            'pattern' => '/\[quote(?:\:[^\]]*?)?\](.*?)\[\/quote(?:\:[^\]]*?)?\]/s',
             'replace' => '<blockquote>$1</blockquote>',
         ],
         'namedquote' => [
-            'pattern' => '/\[quote\=(.*?)\](.*)\[\/quote\]/s',
+            'pattern' => '/\[quote\=(.*?)(?:\:[^\]]*?)?\](.*)\[\/quote(?:\:[^\]]*?)?\]/s',
             'replace' => '<blockquote><small>$1</small>$2</blockquote>',
         ],
         'link' => [
-            'pattern' => '/\[url\](.*?)\[\/url\]/s',
+            'pattern' => '/\[url(?:\:[^\]]*?)?\](.*?)\[\/url(?:\:[^\]]*?)?\]/s',
             'replace' => '<a href="$1">$1</a>',
         ],
         'namedlink' => [
-            'pattern' => '/\[url\=(.*?)\](.*?)\[\/url\]/s',
+            'pattern' => '/\[url\=(.*?)(?:\:[^\]]*?)?\](.*?)\[\/url(?:\:[^\]]*?)?\]/s',
             'replace' => '<a href="$1">$2</a>',
         ],
         'image' => [
-            'pattern' => '/\[img\](.*?)\[\/img\]/s',
+            'pattern' => '/\[img(?:\:[^\]]*?)?\](.*?)\[\/img(?:\:[^\]]*?)?\]/s',
             'replace' => '<img src="$1">',
         ],
         'orderedlistnumerical' => [
-            'pattern' => '/\[list=1\](.*?)\[\/list\]/s',
+            'pattern' => '/\[list=1(?:\:[^\]]*?)?\](.*?)\[\/list(?:\:[^\]]*?)?\]/s',
             'replace' => '<ol>$1</ol>',
         ],
         'orderedlistalpha' => [
-            'pattern' => '/\[list=a\](.*?)\[\/list\]/s',
+            'pattern' => '/\[list=a(?:\:[^\]]*?)?\](.*?)\[\/list(?:\:[^\]]*?)?\]/s',
             'replace' => '<ol type="a">$1</ol>',
         ],
         'unorderedlist' => [
-            'pattern' => '/\[list\](.*?)\[\/list\]/s',
+            'pattern' => '/\[list(?:\:[^\]]*?)?\](.*?)\[\/list(?:\:[^\]]*?)?\]/s',
             'replace' => '<ul>$1</ul>',
         ],
         'listitem' => [
-            'pattern' => '/\[\*\](.*)/',
+            'pattern' => '/\[\*(?:\:[^\]]*?)?\](.*)/',
             'replace' => '<li>$1</li>',
         ],
         'code' => [
-            'pattern' => '/\[code\](.*?)\[\/code\]/s',
+            'pattern' => '/\[code(?:\:[^\]]*?)?\](.*?)\[\/code(?:\:[^\]]*?)?\]/s',
             'replace' => '<code>$1</code>',
         ],
         'youtube' => [
-            'pattern' => '/\[youtube\](.*?)\[\/youtube\]/s',
+            'pattern' => '/\[youtube(?:\:[^\]]*?)?\](.*?)\[\/youtube(?:\:[^\]]*?)?\]/s',
             'replace' => '<iframe width="560" height="315" src="//www.youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>',
         ],
         'linebreak' => [
-            'pattern' => '/\r/',
+            'pattern' => '/[\r\n]/',
             'replace' => '<br />',
         ]
     ];
